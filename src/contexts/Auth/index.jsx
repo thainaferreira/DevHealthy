@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
         setIsAuthenticated(true);
         history.push("/dashboard");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => toast.error("Usuário ou senha inválidos."));
   };
 
   const logout = () => {

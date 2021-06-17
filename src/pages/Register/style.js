@@ -37,12 +37,9 @@ export const LinkStyle = styled(Link)`
   text-decoration: none;
   color: black;
   font-weight: bolder;
+  transition: color 300ms ease-in-out;
 
-  &:focus,
-  &:hover,
-  &:visited,
-  &:link,
-  &:active {
-    text-decoration: none;
+  &:hover {
+    color: #397f39;
   }
 `;

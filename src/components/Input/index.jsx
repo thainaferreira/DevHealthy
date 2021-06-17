@@ -9,6 +9,7 @@ const Input = ({
   errorMsg = "",
   required = true,
   pinkScheme = false,
+  isValidated = false,
   ...rest
 }) => {
   return (
@@ -33,7 +34,9 @@ const Input = ({
         size="small"
         pinkScheme={pinkScheme}
       />
-      <div className="message"> {!!errorMsg && <span>{errorMsg}</span>}</div>
+      {isValidated && (
+        <div className="message"> {!!errorMsg && <span>{errorMsg}</span>}</div>
+      )}
     </Container>
   );
 };

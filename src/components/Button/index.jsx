@@ -1,5 +1,4 @@
-import { useStyles } from "./style";
-import { ButtonStyled } from "./style";
+import { useStyles, ButtonStyled } from "./style";
 
 const Button = ({
   children,

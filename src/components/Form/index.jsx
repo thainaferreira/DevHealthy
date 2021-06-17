@@ -1,7 +1,7 @@
-import {Container} from "./style"
+import { Container } from "./style";
 
-const Form = ({children, ...rest}) => {
-    return <Container {...rest}>{children}</Container>
-}
+const Form = ({ children, ...rest }) => {
+  return <Container {...rest}>{children}</Container>;
+};
 
 export default Form;

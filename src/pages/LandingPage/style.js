@@ -102,9 +102,8 @@ export const ContainerControlers = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  
 
-  Button{
+  Button {
     font-size: 1.5rem;
   }
 

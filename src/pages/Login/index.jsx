@@ -11,6 +11,7 @@ import Form from "../../components/Form";
 import Input from "../../components/Input";
 import PersonIcon from "@material-ui/icons/Person";
 import LockIcon from "@material-ui/icons/Lock";
+import { motion } from "framer-motion";
 
 const Login = () => {
   const { isAuthenticated, login } = useAuth();
@@ -42,37 +43,46 @@ const Login = () => {
   }
 
   return (
-    <FullContainer>
-      <Logo />
-      <Container>
-        <ContainerForm>
-          <Form onSubmit={handleSubmit(handleLogin)}>
-            <Input
-              label="Login"
-              icon={PersonIcon}
-              register={register}
-              name="username"
-              error={!!errors.username}
-              errorMsg={errors.username?.message}
-            />
-            <Input
-              label="Senha"
-              icon={LockIcon}
-              type="password"
-              register={register}
-              name="password"
-              error={!!errors.password}
-              errorMsg={errors.password?.message}
-            />
-            <Button type="submit">Entrar</Button>
-            <Text>
-              Não é cadastrado?{" "}
-              <LinkStyle to="/register">Criar conta</LinkStyle>
-            </Text>
-          </Form>
-        </ContainerForm>
-      </Container>
-    </FullContainer>
+    <motion.div
+      initial={{ x: -2000, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 2000, opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <FullContainer>
+        <Logo />
+        <Container>
+          <ContainerForm>
+            <Form onSubmit={handleSubmit(handleLogin)}>
+              <Input
+                label="Usuário"
+                icon={PersonIcon}
+                register={register}
+                name="username"
+                error={!!errors.username}
+                errorMsg={errors.username?.message}
+                isValidated
+              />
+              <Input
+                label="Senha"
+                icon={LockIcon}
+                type="password"
+                register={register}
+                name="password"
+                error={!!errors.password}
+                errorMsg={errors.password?.message}
+                isValidated
+              />
+              <Button type="submit">Entrar</Button>
+              <Text>
+                Não é cadastrado?
+                <LinkStyle to="/register"> Criar conta</LinkStyle>
+              </Text>
+            </Form>
+          </ContainerForm>
+        </Container>
+      </FullContainer>
+    </motion.div>
   );
 };
 

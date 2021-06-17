@@ -6,6 +6,7 @@ export const Container = styled.div`
   background-image: url(${background});
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   width: 100%;
   height: calc(100% - 65px);
   display: flex;
@@ -32,15 +33,11 @@ export const Text = styled.span`
 `;
 
 export const LinkStyle = styled(Link)`
-  text-decoration: none;
   color: black;
   font-weight: bolder;
+  transition: color 300ms ease-in-out;
 
-  &:focus,
-  &:hover,
-  &:visited,
-  &:link,
-  &:active {
-    text-decoration: none;
+  &:hover {
+    color: #397f39;
   }
 `;
